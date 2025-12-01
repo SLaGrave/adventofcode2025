@@ -1,2 +1,4 @@
 # Ignore my input files
 *.txt
+
+__pycache__/

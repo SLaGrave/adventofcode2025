@@ -1,5 +1,5 @@
 
-def load_data(data_location = "../inputs/day01.txt"):
+def load_data(data_location):
     """Loads data from a txt file.
     
     Read lines, strip each one, and return as a list
@@ -34,7 +34,11 @@ def part_two(data):
     return counter
 
 
-if __name__ == "__main__":
-    data = load_data()
+def run(data_location = "../inputs/day01.txt"):
+    data = load_data(data_location)
     print(part_one(data.copy()))
     print(part_two(data.copy()))
+
+
+if __name__ == "__main__":
+    run()
