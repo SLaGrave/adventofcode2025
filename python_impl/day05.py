@@ -2,7 +2,8 @@
 def load_data(data_location):
     """Loads data from a txt file.
     
-    Read lines, strip each one, and return as a list
+    Read lines, strip each one, split into fresh and available ingredients,
+    make fresh a list of lists, and make all int-strings actually ints.
     """
     with open(data_location, "r") as f:
         data = [q.strip() for q in f.readlines()]
