@@ -7,18 +7,11 @@ def load_data(data_location):
     """
     with open(data_location, "r") as f:
         data = [q.strip() for q in f.readlines()]
-        fresh = list()
-        available = list()
-        first_half_of_list = True
-        for item in data:
-            if item == "":
-                first_half_of_list = False
-                continue
-            if first_half_of_list:
-                tmp = item.split("-")
-                fresh.append([int(tmp[0]), int(tmp[1])])
-            else:
-                available.append(int(item))
+        idx = data.index("")
+        fresh = [
+            [int(bound) for bound in item.split("-")] for item in data[:idx]
+        ]
+        available = [int(item) for item in data[idx+1:]]
     return fresh, available
 
 
