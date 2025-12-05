@@ -7,23 +7,23 @@ def load_data(data_location):
     with open(data_location, "r") as f:
         data = [q.strip() for q in f.readlines()]
         fresh = list()
-        second = list()
-        alnsd = True
+        available = list()
+        first_half_of_list = True
         for item in data:
             if item == "":
-                alnsd = False
+                first_half_of_list = False
                 continue
-            if alnsd:
+            if first_half_of_list:
                 tmp = item.split("-")
                 fresh.append([int(tmp[0]), int(tmp[1])])
             else:
-                second.append(int(item))
-    return fresh, second
+                available.append(int(item))
+    return fresh, available
 
 
-def part_one(fresh, second):
+def part_one(fresh, available):
     counter = 0
-    for item in second:
+    for item in available:
         for pair in fresh:
             if item >= pair[0] and item <= pair[1]:
                 counter += 1
@@ -31,7 +31,9 @@ def part_one(fresh, second):
     return counter
 
 
-def sub(fresh):
+def sub_part_two(fresh):
+    """Goes through the fresh list and tries to fold ranges into each other
+    wherever possible. Needs to be run several times."""
     maxes = list()
     for item in fresh:
         x, y = item
@@ -65,8 +67,7 @@ def sub(fresh):
 
 def part_two(fresh):
     while True:
-        print(fresh)
-        new_fresh = sub(fresh)
+        new_fresh = sub_part_two(fresh)
         if new_fresh == fresh:
             counter = 0
             for item in fresh:
@@ -76,8 +77,8 @@ def part_two(fresh):
 
 
 def run(data_location = "../inputs/day05.txt"):
-    fresh, second = load_data(data_location)
-    print(part_one(fresh.copy(), second.copy()))
+    fresh, available = load_data(data_location)
+    print(part_one(fresh.copy(), available.copy()))
     print(part_two(fresh.copy()))
 
 
