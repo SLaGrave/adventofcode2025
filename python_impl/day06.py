@@ -13,6 +13,13 @@ def load_data(data_location):
     return values, ops
 
 
+def load_raw_data(data_location):
+    """Loads the raw data into a list of strings.
+    """
+    with open(data_location, "r") as f:
+        return f.readlines()
+
+
 def part_one(values, ops):
     counter = 0
     for x in range(len(ops)):
@@ -25,25 +32,23 @@ def part_one(values, ops):
     return counter
 
 
-def part_two(data_location):
+def part_two(data):
     counter = 0
-    with open(data_location, "r") as f:
-        data = f.readlines()
     data = [q.replace("\n", "") for q in data]
+    # Rotate into columns
     cols = list()
     for x in range(len(data[0])):
         s = ""
         for row in data:
             s += row[x]
         cols.insert(0, s)
-    
-    print(cols)
-
+    # Iterate through columns
+    # When a column ends with an operation, join all saved columns using that
+    # operation. Then reset the saved columns
     my_items = list()
     for item in cols:
         item = item.strip()
         if item == "":
-            print(my_items)
             my_items = list()
             continue
         try:
@@ -51,14 +56,14 @@ def part_two(data_location):
         except:
             my_items.append(str(eval(item[:-1])))
             counter += eval(item[-1].join(my_items))
-
     return counter
 
 
 def run(data_location = "../inputs/day04.txt"):
     values, ops = load_data(data_location)
+    raw_data = load_raw_data(data_location)
     print(part_one(values.copy(), ops.copy()))
-    print(part_two(data_location))
+    print(part_two(raw_data))
 
 
 if __name__ == "__main__":
