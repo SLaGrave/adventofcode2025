@@ -29,3 +29,8 @@ problems at night, and then actually coding the solution in the morning. Last
 night I could see the solution to Day 3 for two steps, but I wanted to
 generalize it. That's what led to the recursive function in my repo. I was so
 happy when Part 2 was simply more digits!
+
+### Day 06
+
+This code directly uses python's `eval`, so be careful what input files you give
+it.
