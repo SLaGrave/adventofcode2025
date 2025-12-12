@@ -2,6 +2,21 @@
 
 [Advent of Code 2025](adventofcode.com/2025) in a variety(?) of languages - currently just Python3.
 
+| Day | Result |
+| --- | --- |
+| 1 | :star: :star: |
+| 2 | :star: :star: |
+| 3 | :star: :star: |
+| 4 | :star: :star: |
+| 5 | :star: :star: |
+| 6 | :star: :star: |
+| 7 | :star: :star: |
+| 8 | :star: :star: |
+| 9 | :star: |
+| 10 |  |
+| 11 | :star: |
+| 12 |  |
+
 ## Usage
 
 If you want to run the Python 3 implementation, I have a script (`pyaoc25.py`)
