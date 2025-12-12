@@ -1,21 +1,22 @@
 # Advent of Code 2025 🎄
 
-[Advent of Code 2025](adventofcode.com/2025) in a variety(?) of languages - currently just Python3.
+[Advent of Code 2025](adventofcode.com/2025) in a variety(?) of languages -
+currently just Python3.
 
-| Day | Result |
-| --- | --- |
-| 1 | :star: :star: |
-| 2 | :star: :star: |
-| 3 | :star: :star: |
-| 4 | :star: :star: |
-| 5 | :star: :star: |
-| 6 | :star: :star: |
-| 7 | :star: :star: |
-| 8 | :star: :star: |
-| 9 | :star: |
-| 10 |  |
-| 11 | :star: |
-| 12 |  |
+| Day | Python Implementation | Rust Implementation |
+| --- | --- | --- |
+| 1 | :star: :star: | :star: :star: |
+| 2 | :star: :star: |  |
+| 3 | :star: :star: |  |
+| 4 | :star: :star: |  |
+| 5 | :star: :star: |  |
+| 6 | :star: :star: |  |
+| 7 | :star: :star: |  |
+| 8 | :star: :star: |  |
+| 9 | :star: |  |
+| 10 |  |  |
+| 11 | :star: |  |
+| 12 |  |  |
 
 ## Usage
 
@@ -26,6 +27,16 @@ that will run any day on any input. Use the command:
 $ python pyaoc25.py <day> <input_path>
 # Example command
 $ python pyaoc25.py 1 inputs/day01.txt
+```
+
+If you want to run the Rust implementation, call the program passing in the same
+arguments as above.
+
+```sh
+$ cd rust_impl
+$ cargo run -- <day> <input_path>
+# Example command
+$ cargo run -- 1 ../inputs/day01.txt
 ```
 
 ## Notes on days
