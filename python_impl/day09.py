@@ -18,7 +18,7 @@ def area(loc1, loc2):
 def part_one(data):
     counter = 0
     for idx1, loc1 in enumerate(data):
-        for idx2, loc2 in enumerate(data[idx1+1:]):
+        for loc2 in data[idx1+1:]:
             a = area(loc1, loc2)
             if a > counter: counter = a
     return counter

@@ -38,7 +38,7 @@ def part_two(devices):
     return -1
 
 
-def run(data_location = "../inputs/day10.txt"):
+def run(data_location = "../inputs/day11.txt"):
     devices = load_devices(data_location)
     print(part_one(devices.copy()), flush=True)
     print(part_two(devices.copy()), flush=True)
